@@ -173,4 +173,7 @@ body {
         display: none;
     }
 
+    .movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
