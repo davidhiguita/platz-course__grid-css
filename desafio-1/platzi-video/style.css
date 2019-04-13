@@ -1,0 +1,76 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.platzi-video {
+    display: grid;
+    grid-template-areas: "navigator content"
+                         "navigator content"
+                         "navigator content";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+.platzi-video div {
+    border: solid 1px tomato;
+}
+
+.navigator {
+    display: grid;
+    grid-template-areas: "logo"
+                         "playlist"
+                         "friends";
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px repeat(2, 1fr);
+    grid-area: navigator;
+}
+.logo {
+    grid-area: logo;
+}
+.playlist {
+    display: grid;
+    grid-template-areas: "playlist-title"
+                         "playlist-list";
+    grid-template-columns: 1fr;
+    grid-template-rows: 45px 1fr;
+    grid-area: playlist;
+}
+.playlist__title {
+    grid-area: playlist-title;
+}
+.playlist__list {
+    grid-area: playlist-list;
+}
+.friends {
+    grid-area: friends;
+}
+
+.content {
+    display: grid;
+    grid-area: content;
+    grid-template-areas: "video video"
+                         "video-description video-description"
+                         "comments suggestions";
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 300px 120px 1fr;
+}
+
+.video {
+    grid-area: video;
+}
+
+.video-description {
+    grid-area: video-description;
+}
+
+.comments {
+    grid-area: comments;
+}
+
+.suggestions {
+    grid-area: suggestions;
+}
