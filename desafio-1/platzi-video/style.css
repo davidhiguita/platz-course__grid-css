@@ -10,27 +10,39 @@ body {
     grid-template-areas: "navigator content"
                          "navigator content"
                          "navigator content";
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr;
     height: 100vh;
     width: 100vw;
 }
-.platzi-video div {
-    border: solid 1px tomato;
-}
 
 .navigator {
+    background-color: #151B31;
+    color: white;
     display: grid;
     grid-template-areas: "logo"
                          "playlist"
                          "friends";
     grid-template-columns: 1fr;
-    grid-template-rows: 100px repeat(2, 1fr);
+    grid-template-rows: 80px repeat(2, 1fr);
     grid-area: navigator;
 }
 .logo {
+    align-items: center;
+    display: flex;
+    font-size: 2.2rem;
+    font-weight: bold;
     grid-area: logo;
+    justify-content: center;
 }
+.logo span:nth-of-type(2) {
+    background: -webkit-linear-gradient(0deg, #F51720, #FFFFFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 6px;
+}
+
 .playlist {
     display: grid;
     grid-template-areas: "playlist-title"
@@ -38,15 +50,74 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 45px 1fr;
     grid-area: playlist;
+    overflow-y: hidden;
 }
 .playlist__title {
+    align-items: center;
+    display: flex;
     grid-area: playlist-title;
+    justify-content: flex-start;
+    padding-left: 10px;
 }
 .playlist__list {
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
     grid-area: playlist-list;
+    overflow-y: auto;
+    padding: 10px;
+    padding-left: 40px;
 }
+.playlist-item {
+    height: 20px;
+    margin: 10px 0;
+}
+
 .friends {
+    display: flex;
+    flex-direction: column;
     grid-area: friends;
+    overflow-y: hidden;
+}
+.friends-title {
+    align-items: center;
+    display: flex;
+    grid-area: playlist-title;
+    height: 20px;
+    justify-content: flex-start;
+    padding-left: 10px;
+}  
+.friends-list {
+    box-sizing: border-box;
+    height: calc(100% - 20px);
+    overflow-y: auto;
+    padding: 10px;
+    padding-left: 20px;
+}  
+.friend-item {
+    display: flex;
+    height: 50px;
+    margin: 7px 0;
+}
+.friend-avatar {
+    align-items: center;
+    display: flex;
+    flex: 20%;
+    justify-content: center;
+}
+.friend-avatar img {
+    border: solid 1px gray;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.friend-username {
+    align-items: center;
+    display: flex;
+    flex: 80%;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .content {
