@@ -131,11 +131,51 @@ body {
 }
 
 .video {
+    background-color: lightblue;
     grid-area: video;
 }
 
 .video-description {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 30px 30px 1fr;
     grid-area: video-description;
+}
+.video-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+}
+.video-views {
+    color: gray;
+    font-size: 1rem;
+    grid-column: 1 / span 12;
+    grid-row: 2 / span 1;
+}
+.video-actions {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    grid-column: 1 / span 12;
+    grid-row: 3 / span 1;
+}
+.video-actions .button {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    justify-content: center;
+}
+.video-actions .button i {
+    text-align: center;
+}
+.video-actions .button.add-to-my-list {
+    background-color: tomato;
+}
+
+.video-description div {
+    border: solid 2px orange;
 }
 
 .comments {
