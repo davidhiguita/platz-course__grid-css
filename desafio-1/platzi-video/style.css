@@ -140,6 +140,7 @@ body {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 30px 30px 1fr;
     grid-area: video-description;
+    padding: 0 10px;
 }
 .video-title {
     font-size: 1.2rem;
@@ -156,9 +157,13 @@ body {
 .video-actions {
     align-items: center;
     box-sizing: border-box;
-    display: flex;
+    display: grid;
     grid-column: 1 / span 12;
     grid-row: 3 / span 1;
+    grid-template-areas:
+        "add-to add-to share save . tags tags tags tags tags tags tags";
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
 }
 .video-actions .button {
     border-radius: 5px;
@@ -171,11 +176,51 @@ body {
     text-align: center;
 }
 .video-actions .button.add-to-my-list {
+    grid-area: add-to;
+}
+.button.add-to-my-list span {
     background-color: tomato;
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+}
+.video-actions .icon-reply {
+    grid-area: share;
+    transform: rotateY(180deg);
+}
+.video-actions .button.save {
+    grid-area: save;
+}
+.button.share span,
+.button.save span {
+    text-align: center;
 }
 
-.video-description div {
-    border: solid 2px orange;
+.tags {
+    display: flex;
+    grid-area: tags;
+}
+.tag {
+    border-radius: 5px;
+    color: white;
+    margin: 0 5px;
+    padding: 5px 10px;
+}
+
+.tag.electronic {
+    background-color: purple;
+}
+.tag.rock {
+    background-color: lightgreen;
+}
+.tag.eighty {
+    background-color: red;
+}
+.tag.relax {
+    background-color: lightcoral;
 }
 
 .comments {
